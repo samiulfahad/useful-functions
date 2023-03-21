@@ -1,4 +1,9 @@
 const capitalize = (name) => {
+  //Check name via Regular expression
+  const allowed = /^[a-zA-Z ]+$/;
+  if (!name.match(allowed)) {
+    return console.log("Name should contain only A-z and white space");
+  }
   let nameArr = name.split(" ");
   nameArr = nameArr.filter((name) => name != "");
   let capitalized = "";
@@ -9,4 +14,4 @@ const capitalize = (name) => {
   console.log(capitalized);
 };
 
-capitalize(" abdul   mKHAN ");
+capitalize(" abdul  m KHAN");
